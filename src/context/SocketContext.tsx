@@ -32,7 +32,9 @@ export const SocketProvider = ({ children }: ProviderProps) => {
   useEffect(() => {
     if (!user?._id) return;
 
-    const newSocket = io(chat_service, {
+    const newSocket = io(window.location.origin, {
+      path: "/chat_service/socket.io",
+      transports: ["polling"],
       query: {
         userId: user._id,
       },
