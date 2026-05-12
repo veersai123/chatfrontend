@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         source: "/chat_service/:path*",
         destination: "http://13.53.205.180:5002/:path*",
       },
+      {
+        source: "/socket.io/:path*",
+        destination: "http://13.53.205.180:5002/socket.io/:path*",
+      },
     ];
   },
 };
